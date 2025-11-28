@@ -1,0 +1,4 @@
+## iniciar proyecto
+
+``
+npm i

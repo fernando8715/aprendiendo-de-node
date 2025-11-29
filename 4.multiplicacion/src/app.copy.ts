@@ -2,7 +2,7 @@ import fs from 'fs';
 import { yarg } from './config/plugins/yarn.plugin';
 import { CreateTable } from './domain/use-cases/create-table.use-case';
 
-const {b:base, l:limit, s:showTable} = yarg;
+const { b: base, l: limit, s: showTable } = yarg;
 
 const header: string = `
 =============================
@@ -11,13 +11,13 @@ const header: string = `
 `;
 let result: string = header;
 
-const createTable = new CreateTable().execute({base, limit})
-console.log(showTable);
+const createTable = new CreateTable()
+    .execute({ base, limit })
 
-
-if(showTable) console.log(createTable);
+result = header + result;
+if (showTable) console.log(result);
 
 
 const path: string = 'output'
-fs.mkdirSync(path, {recursive: true});
-fs.writeFileSync(`output/tabla-${base}.txt`, result );
+fs.mkdirSync(path, { recursive: true });
+fs.writeFileSync(`output/tabla-${base}.txt`, result);

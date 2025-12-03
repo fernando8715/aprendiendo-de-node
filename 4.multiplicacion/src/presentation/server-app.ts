@@ -9,7 +9,7 @@ interface RunOptions {
     fileDestination: string
 };
 
-export class serverApp {
+export class ServerApp {
 
     static run({ base, limit, showTable, fileName, fileDestination }: RunOptions) {
         console.log('Server running ...');

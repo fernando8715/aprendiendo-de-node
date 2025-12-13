@@ -16,13 +16,11 @@ export class CheckService implements CheckServiceUseCase {
     public async execute(url: string): Promise<boolean> {
 
         try {
-
             const req = await fetch(url);
             if (!req) {
                 throw new Error(`${url} esta fallando`);
             };
             this.successCallback();
-
             return true;
 
         } catch (error) {
